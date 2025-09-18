@@ -1,5 +1,4 @@
 :root {
-  --Purple-600: hsl(246, 80%, 60%);
   /* (work) */
   --Orange-300: hsl(15, 100%, 70%);
   /* (play) */
@@ -12,6 +11,7 @@
   --Purple-700: hsl(264, 64%, 52%);
   /* (self care) */
   --Yellow-300: hsl(43, 84%, 65%);
+  --Purple-600: hsl(246, 80%, 60%);
   --Navy-950: hsl(226, 43%, 10%);
   --Navy-900: hsl(235, 46%, 20%);
   --Purple-500: hsl(235, 45%, 61%);
@@ -35,22 +35,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
   width: 100dvw;
+  height: 100vh;
   height: 100dvh;
   background-color: var(--Navy-950);
   font-weight: 300;
 }
 
 .main-container {
-  background-color: coral;
+  background-color: ivory;
   width: 77.5%;
   height: 50%;
   display: grid;
-  grid-template-rows: 50% 50%;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
-    "person . . ."
-    "person . . .";
+    "person work play study"
+    "person exercise social self-care";
+  gap: 2rem;
 }
 
 .personal-block {
@@ -101,4 +104,50 @@ body {
   background-color: var(--Navy-900);
   color: var(--Purple-500);
   font-size: 1.25rem;
+}
+
+.work-block {
+  background-color: var(--Orange-300);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.work-info {
+  background-color: var(--Navy-900);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: var(--White);
+  z-index: 1;
+}
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.work-time {
+  padding-top: 1rem;
+}
+
+.work-current-time {
+  font-size: 3.25rem;
+}
+
+.work-last-wk-time {
+  color: var(--Navy-200);
+  padding-top: 0.5rem;
+}
+
+.work-img {
+  position: absolute;
+  filter: brightness(0.95);
+  top: -5%;
+  right: 10%;
 }
