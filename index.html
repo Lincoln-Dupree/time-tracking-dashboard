@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,9 +26,9 @@
           <h1 class="report-name">Jeremy Robson</h1>
         </div>
         <div class="time-select-container">
-          <button class="daily-btn time-btn">Daily</button>
-          <button class="weekly-btn time-btn">Weekly</button>
-          <button class="monthly-btn time-btn">Monthly</button>
+          <button type="button" class="daily-btn time-btn">Daily</button>
+          <button type="button" class="weekly-btn time-btn">Weekly</button>
+          <button type="button" class="monthly-btn time-btn">Monthly</button>
         </div>
       </section>
       <section class="work-block">
@@ -134,6 +134,27 @@
           src="images/icon-social.svg"
           alt="text bubbles img for social category"
           class="social-img"
+        />
+      </section>
+      <section class="self-care-block">
+        <div class="self-care-info">
+          <div class="self-care-header">
+            <span class="category">Self Care</span>
+            <img
+              src="images/icon-ellipsis.svg"
+              alt="elipsis icon"
+              class="elipsis-icon"
+            />
+          </div>
+          <div class="self-care-time">
+            <div class="self-care-current-time">0hrs</div>
+            <div class="self-care-last-wk-time">Last Week - 0hrs</div>
+          </div>
+        </div>
+        <img
+          src="images/icon-self-care.svg"
+          alt="healing heart img for self care category"
+          class="self-care-img"
         />
       </section>
     </main>

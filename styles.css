@@ -44,7 +44,7 @@ body {
 }
 
 .main-container {
-  background-color: ivory;
+  /* background-color: ivory; */
   width: 77.5%;
   height: 50%;
   display: grid;
@@ -104,6 +104,18 @@ body {
   background-color: var(--Navy-900);
   color: var(--Purple-500);
   font-size: 1.25rem;
+}
+
+.daily-btn {
+  color: var(--Purple-500);
+}
+
+.weekly-btn {
+  color: var(--Purple-500);
+}
+
+.monthly-btn {
+  color: var(--Purple-500);
 }
 
 .work-block {
@@ -335,6 +347,53 @@ body {
 }
 
 .social-img {
+  position: absolute;
+  filter: brightness(0.95);
+  top: -5%;
+  right: 10%;
+}
+
+.self-care-block {
+  grid-area: self-care;
+  background-color: var(--Yellow-300);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.self-care-info {
+  background-color: var(--Navy-900);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: var(--White);
+  z-index: 1;
+}
+
+.self-care-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.self-care-time {
+  padding-top: 1rem;
+}
+
+.self-care-current-time {
+  font-size: 3.25rem;
+}
+
+.self-care-last-wk-time {
+  color: var(--Navy-200);
+  padding-top: 0.5rem;
+}
+
+.self-care-img {
   position: absolute;
   filter: brightness(0.95);
   top: -5%;
