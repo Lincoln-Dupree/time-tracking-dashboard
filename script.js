@@ -15,14 +15,37 @@ async function getTimes() {
         }
 
         const data = await response.json();
-        console.log(data)
+        return data;
     }
     catch (error) {
         console.error(error);
     }
 }
 
-dailyBtn.addEventListener("click", function () {
-    // dailyBtn.style.color = "var(--white)";
-    console.log("click");
+dailyBtn.addEventListener("click", async function () {
+    dailyBtn.style.color = "var(--White)";
+    weeklyBtn.style.color = "var(--Purple-500)";
+    monthlyBtn.style.color = "var(--Purple-500)";
+
+    const allTimes = await getTimes();
+
+    for (let each of allTimes) {
+        if (each["title"].toLowerCase() == "work") {
+            currentWorkTime.innerText = `${each["timeframes"]["daily"]["current"]}hrs`
+        }
+    }
 })
+
+// weeklyBtn.addEventListener("click", function () {
+//     dailyBtn.style.color = "var(--Purple-500)";
+//     weeklyBtn.style.color = "var(--White)";
+//     monthlyBtn.style.color = "var(--Purple-500)";
+
+// })
+
+// monthlyBtn.addEventListener("click", function () {
+//     dailyBtn.style.color = "var(--Purple-500)";
+//     weeklyBtn.style.color = "var(--Purple-500)";
+//     monthlyBtn.style.color = "var(--White)";
+
+// })
