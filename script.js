@@ -41,30 +41,18 @@ dailyBtn.addEventListener("click", async function () {
     const allTimes = await getTimes();
 
     for (let each of allTimes) {
-        if (each["title"].toLowerCase() == "work") {
-            currentWorkTime.innerText = `${each.timeframes.daily.current}hrs`;
-            previousWorkTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
+        let title = each.title.toLowerCase().replace(/ /g, "-");
+
+        const currentTime = document.querySelector(`.${title}-current-time`);
+        const previousTime = document.querySelector(`.${title}-last-wk-time`);
+
+        if (currentTime && previousTime) {
+            currentTime.innerText = `${each.timeframes.daily.current}hrs`;
+            previousTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
+        } else {
+            console.error("Missing Data")
         }
-        if (each["title"].toLowerCase() == "play") {
-            currentPlayTime.innerText = `${each.timeframes.daily.current}hrs`;
-            previousPlayTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
-        }
-        if (each["title"].toLowerCase() == "study") {
-            currentStudyTime.innerText = `${each.timeframes.daily.current}hrs`;
-            previousStudyTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
-        }
-        if (each["title"].toLowerCase() == "exercise") {
-            currentExerciseTime.innerText = `${each.timeframes.daily.current}hrs`;
-            previousExerciseTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
-        }
-        if (each["title"].toLowerCase() == "social") {
-            currentSocialTime.innerText = `${each.timeframes.daily.current}hrs`;
-            previousSocialTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
-        }
-        if (each["title"].toLowerCase() == "self care") {
-            currentSelfCareTime.innerText = `${each.timeframes.daily.current}hrs`;
-            previousSelfCareTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
-        }
+
     }
 })
 
@@ -81,3 +69,29 @@ monthlyBtn.addEventListener("click", function () {
     monthlyBtn.style.color = "var(--White)";
 
 })
+
+
+// if (each["title"].toLowerCase() == "work") {
+//             currentWorkTime.innerText = `${each.timeframes.daily.current}hrs`;
+//             previousWorkTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
+//         }
+//         if (each["title"].toLowerCase() == "play") {
+//             currentPlayTime.innerText = `${each.timeframes.daily.current}hrs`;
+//             previousPlayTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
+//         }
+//         if (each["title"].toLowerCase() == "study") {
+//             currentStudyTime.innerText = `${each.timeframes.daily.current}hrs`;
+//             previousStudyTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
+//         }
+//         if (each["title"].toLowerCase() == "exercise") {
+//             currentExerciseTime.innerText = `${each.timeframes.daily.current}hrs`;
+//             previousExerciseTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
+//         }
+//         if (each["title"].toLowerCase() == "social") {
+//             currentSocialTime.innerText = `${each.timeframes.daily.current}hrs`;
+//             previousSocialTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
+//         }
+//         if (each["title"].toLowerCase() == "self care") {
+//             currentSelfCareTime.innerText = `${each.timeframes.daily.current}hrs`;
+//             previousSelfCareTime.innerText = `Last Week - ${each.timeframes.daily.previous}hrs`;
+//         }
